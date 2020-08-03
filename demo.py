@@ -12,4 +12,5 @@ sum=add(1,2)
 print(sum)
 
 outer(add(1,2))
+print('装饰器')
 # print(sum)
