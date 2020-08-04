@@ -46,8 +46,50 @@ print(a(3))
 print(a)  
 
 mapvalue=list(map(lambda x,y:x+y,[3,6],[8,5]))
-print(mapvalue)  
+print(mapvalue) 
 
 
-# 
+# 中国='china'
+# print(中国) 
+
+# print hello
+print('==================')
+arr=[1, 2, 3, 11, 2, 5, 3, 2, 5, 3]
+iterr=arr.__iter__()
+print(iterr.__next__())
+print(iterr.__next__())
+
+
+print('==================')
+arr={'x':12,'y':56,'c':'lwk'}
+iterr=arr.__iter__()
+print(iterr.__next__())
+print(iterr.__next__())
+
+
+print('==================')
+# class lwjiter:
+# 	def __init__(self,*args,**kwargs):
+# 		self.values = args;		
+# 	def __iter__(self):
+# 		self.index = 0;
+# 		reutrn self;
+# 	def __next__(self):		
+# 	    tmp =  self.values[self.index];
+# 	    self.index= self.index+1
+# 	    return tmp;
+
+ # [1,2,3]*2
+
+ # return;
+xx = 5
+
+def lambda1(x):
+    return x*2
+result = lambda1([1,2,3])
+ 
+
+
+
+
 
