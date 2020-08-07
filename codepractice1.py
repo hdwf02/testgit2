@@ -349,6 +349,75 @@ print(name_filter)
 # 列表推导式一目了然，生成器表达式只是一个内存地址。
 
 
+#====a = "  hehheh  ",去除首尾空格
+a = "       hehheh "
+bb=a.strip('h') #==移除字符串头尾指定的字符序列,默认是空格或者换行符
+cc=bb.strip('h')
+print(a)
+print(bb)
+print(cc)
 
+
+# 对list排序foo = [-5,8,0,4,9,-4,-20,-2,8,2,-4],使用lambda函数从小到大排序
+foo = [-5,8,0,4,9,-4,-20,-2,8,2,-4]
+# foo.sort()
+print(foo)
+foo_new=sorted(foo,key=lambda i:i)
+# sorted(iterable, key=None, reverse=False)  
+
+# 使用lambda函数对list排序foo = [-5,8,0,4,9,-4,-20,-2,8,2,-4]，输出结果为[0,2,4,8,8,9,-2,-4,-4,-5,-20]，正数从小到大，负数从大到小
+
+cc=sorted(foo,key=lambda i:(i<0,abs(i)))
+# key -- 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。
+print(cc)
+
+# 列表嵌套字典的排序，分别根据年龄和姓名排序
+foo = [{"name":"zs","age":19},{"name":"ll","age":54},{"name":"wa","age":17},{"name":"df","age":23}]
+# foo_new=[ person for person in foo ]
+foo_new=sorted(foo,key=lambda x:x['name'])   #按名称进行排序
+foo_age=sorted(foo,key=lambda x:x['age'])
+print(foo_new)
+print(foo_age)
+# foo_new=sorted(foo)
+
+
+print('==========')
+# 列表嵌套元组，分别按字母和数字排序
+foo = [("zs", 19), ("ll", 54),("wa",17), ("df", 23)]
+foo_ca=sorted(foo,key=lambda x:x[0])
+foo_num=sorted(foo,key=lambda x:x[1])
+print(foo_ca)
+print(foo_num)
+
+print('==========')
+# 列表嵌套列表排序，年龄数字相同怎么办？
+foo = [["zs", 19], ["ll", 54],["wa",23], ["df", 23],["xf",23]]
+foo_num=sorted(foo,key=lambda x:(x[1],x[0]))
+print(foo_num)
+
+print('==========')
+#根据键对字典排序   根据dict的items方法
+dic = {"name":"zs","sex":"man" ,"city":"bj"}
+tran=dic.items()    #============返回可遍历的(键, 值) 元组数组。
+trans=list(tran)
+print(trans)
+# print(list(tran))
+new_dict=sorted(trans,key=lambda x:x[0])
+print(new_dict)
+
+
+print('==========')
+#根据键对字典排序   根据zip方法
+dic = {"name":"zs","sex":"man" ,"city":"bj"}
+print(dic.keys(),dic.values())
+new_dic=zip(dic.keys(),dic.values())
+print(new_dic)
+new_dic=list(new_dic)
+print(new_dic,'yyyyyyyyy')
+new_sort=sorted(new_dic,key=lambda x:x)
+print(new_sort,'xxxxxxxxxx')
+# 在转变为字典格式
+new_dic={i[0]:i[1] for i in new_sort}
+print(new_dic)
 
  		
