@@ -5,7 +5,7 @@ def outer(somefun):
 		print(ret)
 		# return ret+1
 
-	return inner
+	return inner   #=======  return func name
 
 def foo():
 	return 1
